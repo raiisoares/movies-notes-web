@@ -6,8 +6,49 @@ export const Container = styled.header`
     width: 100%;
     height: 11.6rem;
     padding: 2.4rem 12.3rem;
-    background-color: ${({ theme }) => theme.COLORS.PINK};
+    gap: 6.4rem;
     border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_800}; 
     display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
+export const Brand = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    color: ${({ theme }) => theme.COLORS.PINK};
+`;
+
+export const Profile = styled.div`
+    display: flex;
+    align-items: center;
+    
+    >div {
+        display: flex;
+        min-width: fit-content;
+        flex-direction: column;
+        align-items: end;
+        margin-right: 1rem;
+
+        >strong{
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+
+        >span {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: ${({ theme }) => theme.COLORS.GRAY_100};
+        }
+    }
+
+    >img {
+        width: 6.4rem;
+        height: 6.4rem;
+        border-radius: 50%;
+    }
 `;
