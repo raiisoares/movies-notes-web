@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     grid-area: header;
-    justify-content: space-between;
-    width: 100%;
-    height: 11.6rem;
-    padding: 2.4rem 12.3rem;
-    gap: 6.4rem;
-    border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_800}; 
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10.6rem;
+    padding: 2.4rem 12.3rem;
+    gap: 6.4rem;
+    border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_800}; 
 `;
 
 export const Brand = styled.div`
