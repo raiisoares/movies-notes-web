@@ -10,7 +10,7 @@ export const Container = styled.button`
     color: ${({ theme }) => theme.COLORS.PINK};
     background-color: transparent;
     border: none;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     >svg {
         font-size: 1.6rem;
     }
