@@ -2,6 +2,7 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { Container, Content } from "./styles";
 import { Header } from "../../components/Header";
 import { Note } from "../../components/Note";
+import { Link } from "react-router-dom";
 
 export function Home(){
     return(
@@ -10,15 +11,14 @@ export function Home(){
             <Content>
                 <div>
                     <h1>Meus filmes</h1>
-                    <button><AiOutlinePlus/> Adicionar filme</button>
+                    <Link to="/new"><AiOutlinePlus/> Adicionar filme</Link>
                 </div>
-                <Note title={"Interstellar"} />
-                <Note title={"Interstellar"} />
-                <Note title={"Interstellar"} />
-                <Note title={"Interstellar"} />
-                <Note title={"Interstellar"} />
-                <Note title={"Interstellar"} />
-
+                <Note to="/preview/2" title={"Interstellar"} />
+                <Note to="/preview/2" title={"Interstellar"} />
+                <Note to="/preview/2" title={"Interstellar"} />
+                <Note to="/preview/2" title={"Interstellar"} />
+                <Note to="/preview/2" title={"Interstellar"} />
+                <Note to="/preview/2" title={"Interstellar"} />
             </Content>
         </Container>
     );

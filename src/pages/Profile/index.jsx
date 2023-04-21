@@ -8,7 +8,7 @@ export function Profile() {
     return(
         <Container>
             <ProfileHeader>
-                <ButtonText value={"Voltar"}/>
+                <ButtonText to="/" value={"Voltar"}/>
             </ProfileHeader>
 
             <div>

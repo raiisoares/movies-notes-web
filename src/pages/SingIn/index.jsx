@@ -1,4 +1,5 @@
 import { Container, Form, Background } from "./styles";
+import { Link } from "react-router-dom"
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
@@ -15,7 +16,7 @@ export function SingIn() {
                 <Input type="mail" placeholder="E-Mail" icon={AiOutlineMail} />
                 <Input type="password" placeholder="Senha" icon={AiFillLock} />
                 <Button value={"Entrar"}/>
-                <a href="#">Criar conta</a>
+                <Link to="/register">Criar conta</Link>
             </Form>
 
             <Background/>

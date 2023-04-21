@@ -14,6 +14,10 @@ export const Container = styled.div`
         overflow-y: auto;
         padding: 4rem 12.3rem 8.5rem;
 
+        a {
+            justify-content: flex-start;
+        }
+
         >h1 {
             margin-top: 2.4rem;
         }

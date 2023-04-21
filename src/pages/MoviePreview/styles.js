@@ -14,8 +14,9 @@ export const Container = styled.div`
         padding: 4rem 14.7rem 15.6rem;
         overflow-y: auto;
 
-        >button {
+        a {
             margin-top: 6rem;
+            justify-content: flex-start;
         }
 
         >span {

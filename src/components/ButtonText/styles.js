@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
-export const Container = styled.button`
+export const Container = styled(Link)`
     font-size: 1.6rem;
     line-height: 2.1rem;
     display: flex;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
     grid-area: header;
@@ -23,9 +24,11 @@ export const Brand = styled.div`
     color: ${({ theme }) => theme.COLORS.PINK};
 `;
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
     display: flex;
     align-items: center;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    cursor: pointer;
     
     >div {
         display: flex;

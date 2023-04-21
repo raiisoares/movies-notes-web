@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 import { AiOutlineArrowLeft } from "react-icons/ai"
 
-export function ButtonText({value}) {
+export function ButtonText({value, ...rest}) {
    return(
-   <Container>
+   <Container {...rest}>
         <AiOutlineArrowLeft/>
         {value}
     </Container>

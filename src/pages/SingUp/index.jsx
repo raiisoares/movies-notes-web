@@ -17,7 +17,7 @@ export function SingUp() {
                 <Input type="mail" placeholder="E-Mail" icon={AiOutlineMail} />
                 <Input type="password" placeholder="Senha" icon={AiFillLock} />
                 <Button value={"Cadastrar"}/>
-                <ButtonText value={"Voltar para o login"}/>  
+                <ButtonText to="/" value={"Voltar para o login"}/>  
             </Form>
 
             <Background/>

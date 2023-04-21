@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
-export const Container = styled.div`
+export const Container = styled(Link)`
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     width: 100%;
     height: 22.2rem;
     padding: 3.2rem;
@@ -13,6 +15,11 @@ export const Container = styled.div`
     >h2 {
         font-size: 2.4rem;
         margin-bottom: .8rem;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+
+    P {
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
 
     div:nth-child(3) {

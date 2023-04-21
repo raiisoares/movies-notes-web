@@ -13,7 +13,7 @@ export function CreateMovie() {
         <Container>
             <Header/>
             <main>
-            <ButtonText value={"Voltar"}/>
+            <ButtonText to="/" value={"Voltar"}/>
             <h1>Novo filme</h1>
             <div>
                 <Input placeholder="Título"/>

@@ -11,7 +11,7 @@ export function MoviePreview({ user, created_at }) {
             <Header/>
             <main>
                 <span><AiFillStar/></span>
-                <ButtonText value={"Voltar"}/>
+                <ButtonText to="/" value={"Voltar"}/>
                
                 <div>
                     <h1>Interestellar</h1>

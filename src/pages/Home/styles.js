@@ -25,7 +25,7 @@ export const Content = styled.div`
             font-weight: 400;
         }
 
-        button {
+        a {
         width: 20.7rem;
         display: flex;
         justify-content: center;
@@ -34,6 +34,7 @@ export const Content = styled.div`
         border: none;
         border-radius: 1rem;
         background-color: ${({ theme }) => theme.COLORS.PINK};
+        color: ${({ theme }) => theme.COLORS.BLACK};
         height: 4.8rem;
 
             svg {

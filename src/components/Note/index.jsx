@@ -3,9 +3,9 @@ import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { Star } from "../Star";
 import { Tag } from "../Tag";
 
-export function Note({title}){
+export function Note({title, ...rest}){
     return(
-        <Container>
+        <Container {...rest}>
             <h2>{title}</h2>
            
             <Star/>
