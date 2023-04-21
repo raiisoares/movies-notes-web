@@ -15,10 +15,6 @@ export const Container = styled.div`
         margin-bottom: .8rem;
     }
 
-    div:nth-child(2) {
-        color: ${({ theme }) => theme.COLORS.PINK};
-    }
-
     div:nth-child(3) {
         height: 4.2rem;
         overflow-y: hidden;
