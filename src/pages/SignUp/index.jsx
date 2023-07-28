@@ -7,7 +7,7 @@ import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 import { AiOutlineMail, AiFillLock, AiOutlineUser } from "react-icons/ai";
 
-export function SingUp() {
+export function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
