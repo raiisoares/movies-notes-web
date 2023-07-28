@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Button } from './../Button/index';
+import { useEffect } from 'react';
 
 export const Container = styled.header`
     grid-area: header;
@@ -24,11 +26,10 @@ export const Brand = styled.div`
     color: ${({ theme }) => theme.COLORS.PINK};
 `;
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
     display: flex;
     align-items: center;
     color: ${({ theme }) => theme.COLORS.WHITE};
-    cursor: pointer;
     
     >div {
         display: flex;
@@ -42,16 +43,20 @@ export const Profile = styled(Link)`
             line-height: 1.8rem;
         }
 
-        >span {
+        >Button {
             font-size: 1.4rem;
             line-height: 1.8rem;
             color: ${({ theme }) => theme.COLORS.GRAY_100};
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
         }
-    }
+    }`;
 
-    >img {
+export const ImgProfile = styled(Link)`
+    img{
         width: 6.4rem;
         height: 6.4rem;
         border-radius: 50%;
-    }
-`;
+    }`;
+

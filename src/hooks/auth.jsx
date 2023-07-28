@@ -20,9 +20,15 @@ function AuthProvider({ children }) {
         }
     }
 
+    function logout() {
+        localStorage.removeItem("rocketmovies:token");
+        localStorage.removeItem("rocketmovies:user");
+        setData({});
+    }
+
     useEffect(() => {
-        const user = localStorage.getItem("rocketmovies:user");
         const token = localStorage.getItem("rocketmovies:token");
+        const user = localStorage.getItem("rocketmovies:user");
         if (user && token) {
             api.defaults.headers.authorization = `Bearer ${token}`;
             setData({ user: JSON.parse(user), token });
@@ -30,7 +36,7 @@ function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }}>
+        <AuthContext.Provider value={{ signIn, user: data.user, logout }}>
             {children}
         </AuthContext.Provider>
     )
