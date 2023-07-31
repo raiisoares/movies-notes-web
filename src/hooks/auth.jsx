@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
         try {
             const response = await api.post("/sessions", { email, password });
             const { user, token } = response.data;
-            api.defaults.headers.authorization = `Bearer ${token}`;
+            api.defaults.headers.common["authorization"] = `Bearer ${token}`;
             setData({ user, token });
             localStorage.setItem("rocketmovies:user", JSON.stringify(user));
             localStorage.setItem("rocketmovies:token", token);
@@ -30,7 +30,7 @@ function AuthProvider({ children }) {
         const token = localStorage.getItem("rocketmovies:token");
         const user = localStorage.getItem("rocketmovies:user");
         if (user && token) {
-            api.defaults.headers.authorization = `Bearer ${token}`;
+            api.defaults.headers.common["authorization"] = `Bearer ${token}`;
             setData({ user: JSON.parse(user), token });
         }
     }, []);
