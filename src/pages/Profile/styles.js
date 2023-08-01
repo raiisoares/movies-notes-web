@@ -16,23 +16,6 @@ export const Container = styled.div`
             border-radius: 50%;
         }
 
-        >div {
-            width: 4.8rem;
-            height: 4.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            right: 1rem;
-            bottom: .4rem;
-            border-radius: 50%;
-            background-color: ${({ theme }) => theme.COLORS.PINK};
-
-            >svg {
-                font-size: 2.5rem;
-                color: ${({ theme }) => theme.COLORS.GRAY_200};
-            }
-        }
     }
 
 `;
@@ -58,4 +41,41 @@ export const Form = styled.form`
         margin-top: 2.4rem;
     }
 
+`;
+
+export const Avatar = styled.div`
+        position: relative;
+        margin: -12.4rem auto 3.2rem;
+        width: 18.6rem;
+        height: 18.6rem;
+       
+        >img{
+            width: 18.6rem;
+            height: 18.6rem;
+            border-radius: 50%;
+        }
+
+        >label {
+            width: 4.8rem;
+            height: 4.8rem;
+            background-color: ${({ theme }) => theme.COLORS.PINK};
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: .7rem;
+            right: .7rem;
+            cursor: pointer;
+
+            input {
+                display: none;
+            }
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+                color: ${({ theme }) => theme.COLORS.GRAY_200};
+            }
+        }
 `;

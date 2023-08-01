@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { Container, ProfileHeader, Form } from "./styles";
+import { Container, Avatar, ProfileHeader, Form } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { AiOutlineMail, AiFillLock, AiOutlineUser, AiOutlineCamera } from "react-icons/ai";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 export function Profile() {
     const { user, userUpdate } = useAuth();
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+    const [avatar, setAvatar] = useState(avatarUrl);
+    const [avatarFile, setAvatarFile] = useState(null);
 
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
@@ -20,18 +25,26 @@ export function Profile() {
         await userUpdate({ user });
     }
 
+    const handleChangeAvatar = (event) => {
+        const file = event.target.files[0];
+        setAvatarFile(file);
+
+        const imgPreview = URL.createObjectURL(file);
+        setAvatar(imgPreview);
+    }
+
     return (
         <Container>
             <ProfileHeader>
                 <ButtonText to="/" value={"Voltar"} />
             </ProfileHeader>
-
-            <div>
-                <img src="https://www.github.com/raiisoares.png" alt="Foto do usuário" />
-                <div>
+            <Avatar>
+                <img src={avatar} alt="Foto do usuário" />
+                <label htmlFor="avatar">
                     <AiOutlineCamera />
-                </div>
-            </div>
+                    <input onChange={handleChangeAvatar} id="avatar" type="file" />
+                </label>
+            </Avatar>
 
             <Form>
                 <Input type="text" value={name} placeholder="Nome" icon={AiOutlineUser} onChange={event => setName(event.target.value)} />
