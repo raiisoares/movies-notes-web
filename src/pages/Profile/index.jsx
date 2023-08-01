@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { api } from "../../services/api";
 import { Container, Avatar, ProfileHeader, Form } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import { ButtonText } from "../../components/ButtonText";
@@ -22,7 +23,7 @@ export function Profile() {
     const handleUpdate = async (event) => {
         event.preventDefault();
         const user = { name, email, password: passwordNew, old_password: passwordOld }
-        await userUpdate({ user });
+        await userUpdate({ user, avatarFile });
     }
 
     const handleChangeAvatar = (event) => {
