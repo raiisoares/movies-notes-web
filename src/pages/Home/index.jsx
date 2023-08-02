@@ -28,7 +28,7 @@ export function Home(){
    
     return(
         <Container>
-           <Header />
+           <Header value={search} onChange={event => setSearch(event.target.value)}/>
             <Content>
                 <div>
                     <h1>Meus filmes</h1>

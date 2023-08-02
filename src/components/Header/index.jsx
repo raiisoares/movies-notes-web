@@ -4,7 +4,7 @@ import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
-export function Header(){
+export function Header({inputSearch, ...rest}){
     const navigate = useNavigate();
     const {logout, user} = useAuth();
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
@@ -17,7 +17,7 @@ export function Header(){
     return(
         <Container>
             <Brand>RocketMovies</Brand>
-            <Input placeholder="Pesquisar pelo título" />
+            <Input value={inputSearch} placeholder="Pesquisar pelo título" {...rest} />
             <Profile >
                 <div>
                     <strong>{user.name}</strong>
