@@ -3,6 +3,7 @@ import { Input } from "../Input";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 export function Header({inputSearch, ...rest}){
     const navigate = useNavigate();

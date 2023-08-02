@@ -7,14 +7,16 @@ import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 
 
-export function Home(){
-    const navigate = useNavigate();
+export function Home() {
     const [search, setSearch] = useState("");
     const [notes, setNotes] = useState([]);
-   
-    const handlePreview = (id) => {
+    const navigate = useNavigate();
+
+    const handlePreview = (id, event) => {
+        event.preventDefault();
         navigate(`/preview/${id}`);
     }
+
 
     useEffect(() => {
         async function fetchNotes() {
@@ -25,16 +27,18 @@ export function Home(){
         fetchNotes();
 
     }, [search]);
-   
-    return(
+
+    return (
         <Container>
-           <Header value={search} onChange={event => setSearch(event.target.value)}/>
+            <Header value={search} onChange={event => setSearch(event.target.value)} />
             <Content>
                 <div>
                     <h1>Meus filmes</h1>
-                    <Link to="/new"><AiOutlinePlus/> Adicionar filme</Link>
+                    <Link to="/new"><AiOutlinePlus /> Adicionar filme</Link>
                 </div>
-                {notes.map(note => (<Note key={String(note.id)} data={note} onClick={() => handlePreview(note.id)} />))}
+                {notes &&
+                    notes.map(note => (<Note key={String(note.id)} data={note} onClick={(event) => handlePreview(note.id, event)} />))
+                }
 
             </Content>
         </Container>
