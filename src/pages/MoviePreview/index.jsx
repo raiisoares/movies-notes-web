@@ -35,7 +35,7 @@ export function MoviePreview() {
 
                     <div>
                         <h1>{data.title}</h1>
-                        <Star />
+                        <Star rate={data.rating} />
                     </div>
 
                     <div>

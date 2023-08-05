@@ -14,6 +14,7 @@ import { NoteItem } from "../../components/NoteItem";
 export function CreateMovie() {
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
+    const [rating, setRating] = useState(0);
     const [description, setDescription] = useState("");
 
     const [tags, setTags] = useState([]);
@@ -22,9 +23,10 @@ export function CreateMovie() {
     const handleNewMovie = async (event) => {
         event.preventDefault();
         if (!title) return alert("Digite um titulo para sua nova MovieNote!");
+        if (!rating) return alert("Você precisa adicionar uma nota!");
         if (newTag) return alert("Você deixou uma Tag no campo para adicionar tags, porém não clicou em adicionar! Clique para adicionar ou deixe o campo vazio.");
 
-        await api.post("/notes", { title, description, tags });
+        await api.post("/notes", { title, description, rating, tags });
         alert("Nota criada com sucesso.");
         navigate("/");
     }
@@ -48,7 +50,7 @@ export function CreateMovie() {
                 <h1>Novo filme</h1>
                 <div>
                     <Input placeholder="Título" onChange={event => setTitle(event.target.value)} />
-                    <Input placeholder="Sua nota (de 0 a 5)" />
+                    <Input placeholder="Sua nota (de 0 a 5)" onChange={event => setRating(event.target.value)} />
                 </div>
                 <TextArea placeholder="Observações" onChange={event => setDescription(event.target.value)} />
 
