@@ -37,6 +37,6 @@ Pronto! Agora você pode explorar o Movies Notes e desfrutar das incríveis func
 - **senha:** 123456
 
 ## Funcionalidades a Serem Acrescentadas 
-- **Versão para mobile:** Além de abranger desktops e smartphones, uma versão para tablets será disponibilizada.
+- **Versão mobile:** Além de abranger desktops, uma versão para smartphones será disponibilizada.
 - **React hook-forms:** Uso do hook para melhorar a performance e tratamento de erros nos formulários.
 
